@@ -4,6 +4,12 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
+  const URL = import.meta.env.VITE_API_KEY;
+  fetch(
+    `https://youtube.googleapis.com/youtube/v3/search?key=${URL}`)
+  .then((data) => data.json())
+  .then(res => console.log(res))
+
   const [count, setCount] = useState(0)
 
   return (
