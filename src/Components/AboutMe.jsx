@@ -7,7 +7,7 @@ const AboutMe = () => {
           <img src='src/assets/JASTjoseph.png' alt={`Joseph Carter`} />
           <div className="contributer-details-container">
             <h5>{`Joseph Carter`}</h5>
-            <p>Things about me</p>
+            <p>Things about me.</p>
             <a href='https://www.linkedin.com/in/josephaecarter/'>Linkedin</a><br /><a href='https://github.com/Joseph-Carter'>Github</a>
           </div>
         </li>
