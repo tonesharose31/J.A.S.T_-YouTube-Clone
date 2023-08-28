@@ -1,19 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 const NavBar = () => {
   return (
-    <nav>
+    <nav className= ".bg-danger fixed-top border-bottom">
         <h2>
           Youtube
         </h2>
-      <ul>
-        <li>
+      <ul className="row align-items-start">
+        <li class="nav-link col">
           <Link to="/">Home</Link>
         </li>
-        <li>
+        <li class="nav-link col">
           <Link to="/about">About</Link>
-        </li>
+        </li >
       </ul>
     </nav>
   );
