@@ -16,8 +16,8 @@ function App() {
   return (
     <Router>
       <NavBar />
-      <SearchBar URL={URL} />
       <Routes>
+        <Route path="/" element={<SearchBar path="/" URL={URL} />} />
         <Route path="/about" element={<AboutMe />} />
       </Routes>
     </Router>
