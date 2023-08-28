@@ -20,7 +20,7 @@ const SearchBar = ({URL}) => {
   };
 // console.log(videos)
   return (
-    <div>
+    <form>
       <input
         type="text"
         value={searchQuery}
@@ -33,7 +33,7 @@ const SearchBar = ({URL}) => {
           <VideoCard key={video.id.videoId} video={video} />
         ))}
       </div>
-    </div>
+    </form>
   );
 };
 
