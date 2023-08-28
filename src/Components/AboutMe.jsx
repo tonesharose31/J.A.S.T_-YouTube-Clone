@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutMe = () => {
     return (
-        <ul>
+        <ul className='contributor-list'>
         <li className="contributers">
           <img src='src/assets/JASTjoseph.png' alt={`Joseph Carter`} />
           <div className="contributer-details-container">
