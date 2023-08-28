@@ -29,9 +29,9 @@ const SearchBar = ({URL}) => {
       />
       <button onClick={handleSearch}>Search</button>
       <div className="video-list">
-        {videos.length > 0 ? (videos.map((video) => (
+        {videos.map((video) => (
           <VideoCard key={video.id.videoId} video={video} />
-        ))) : (<p>Loading videos..</p>)}
+        ))}
       </div>
     </div>
   );
