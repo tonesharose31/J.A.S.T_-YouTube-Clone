@@ -46,6 +46,7 @@ button {
   background-color: crimson;
   cursor: pointer;
   transition: border-color 0.25s;
+  margin-left: 5px;
 }
 button:hover {
   border-color: #646cff;
@@ -66,4 +67,12 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+.youtube-logo {
+  width: 200px;
+  padding-top: 5px;
+  padding-left: 10px;
+}
+.nav-link {
+  padding-top: 20px;
 }
