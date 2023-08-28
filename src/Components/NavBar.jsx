@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <nav className= ".bg-danger fixed-top border-bottom">
+    <nav className= "nav .bg-danger fixed-top border-bottom">
         <h2>
           Youtube
         </h2>
