@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import SearchBar from "./Components/SearchBar";
+import NavBar from "./Components/NavBar";
 
 function App() {
   const URL = import.meta.env.VITE_API_KEY;
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <Router>
+      <NavBar />
       <Routes>
         <Route path="/" element={<SearchBar URL={URL}/>} />
        </Routes>
