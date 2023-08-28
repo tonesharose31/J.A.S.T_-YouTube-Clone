@@ -2,22 +2,4 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
-}
-.contributers {
-  background-color: rgb(209, 209, 209);
-  min-height: 100px;
-  box-shadow: 2px 2px 4px #000;
-  border-radius: 10px;
-  padding: 1em 5% 1em 1em;
-  margin: 9px;
-  box-sizing: border-box;
-  display: grid;
-  grid-template-areas:
-    "image studentInfo"
-    "details details";
-}
-.contributers > img {
-  max-width: 150px;
-  margin-left: 10px;
 }
