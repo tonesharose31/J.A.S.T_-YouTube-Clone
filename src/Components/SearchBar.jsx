@@ -21,12 +21,12 @@ const SearchBar = ({URL}) => {
 // console.log(videos)
   return (
     <div>
-      {/* <input
+      <input
         type="text"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
         placeholder="Search"
-      /> */}
+      />
       <button onClick={handleSearch}>Search</button>
       <div className="video-list">
         {videos.map((video) => (
