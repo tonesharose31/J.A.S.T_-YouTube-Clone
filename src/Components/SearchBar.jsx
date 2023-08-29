@@ -18,6 +18,7 @@ const SearchBar = ({ URL }) => {
     }
   };
   // console.log(videos)
+  
   return (
     <form>
       <input
