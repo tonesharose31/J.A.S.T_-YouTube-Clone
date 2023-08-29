@@ -9,7 +9,7 @@ function App() {
   const URL = import.meta.env.VITE_API_KEY;
 
   return (
-    <div className="container">
+    <div>
       <Router>
         <NavBar />
         <Routes>
