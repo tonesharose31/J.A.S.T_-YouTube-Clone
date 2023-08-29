@@ -19,26 +19,20 @@ const SearchBar = ({ URL }) => {
   };
   // console.log(videos)
   return (
-    <div>
-      <div>
-        <form>
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search"
-            style={{ paddingRight: "140px" }}
-          />
-
-          <button onClick={handleSearch}>Search</button>
-        </form>
-      </div>
+    <form>
+      <input
+        type="text"
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        placeholder="Search"
+      />
+      <button onClick={handleSearch}>Search</button>
       <div className="video-list">
         {videos.map((video) => (
           <VideoCard key={video.id.videoId} video={video} />
         ))}
       </div>
-    </div>
+    </form>
   );
 };
 
