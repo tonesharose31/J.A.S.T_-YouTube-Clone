@@ -51,6 +51,7 @@ const SearchBar = ({ URL }) => {
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
         placeholder="Search"
+        id="searchInput"
       />
       <button onClick={handleSearch}>Search</button>
       <div className="video-list">
