@@ -6,17 +6,18 @@ import NavBar from "./Components/NavBar";
 import AboutMe from "./Components/AboutMe";
 
 function App() {
-  const URL = import.meta.env.VITE_API_KEY; 
-
+  const URL = import.meta.env.VITE_API_KEY;
 
   return (
-    <Router>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<SearchBar URL={URL}/>} />
-        <Route path="/about" element={<AboutMe />} />
-       </Routes>
-    </Router>
+    <div className="container">
+      <Router>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<SearchBar URL={URL} />} />
+          <Route path="/about" element={<AboutMe />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 
