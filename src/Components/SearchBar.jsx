@@ -1,9 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import VideoCard from "./VideoCard";
 
 const SearchBar = ({ URL }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    const fetchInitialVids = async () => {
+      try {
+        const response = await fetch(
+          `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q=${searchQuery}&maxResults=8&key=${URL}`
+        );
+        const data = await response.json();
+        setVideos(data.items);
+      } catch (error) {
+        console.error(`Error fetching initial search results:`, error);
+      }
+    };
+
+    fetchInitialVids();
+  }, []);
 
   const handleSearch = async (e) => {
     e.preventDefault();
@@ -13,16 +29,10 @@ const SearchBar = ({ URL }) => {
         `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q=${searchQuery}&maxResults=8&key=${URL}`
       );
       const data = await response.json();
-      console.log(data);
       setVideos(data.items);
-      console.log(data.items);
     } catch (error) {
-      console.error(`Error fetchig search results:`, error);
+      console.error(`Error fetching search results:`, error);
     }
-  };
-
-  const onVideoClick = (videoId) => {
-    const video = videos.find((video) => video.id.videoId === videoId);
   };
 
   return (
@@ -36,7 +46,7 @@ const SearchBar = ({ URL }) => {
       <button onClick={handleSearch}>Search</button>
       <div className="video-list">
         {videos.map((video) => (
-          <VideoCard key={video.id.videoId} video={video} onVideoClick={onVideoClick} />
+          <VideoCard key={video.id.videoId} video={video} />
         ))}
       </div>
     </form>
