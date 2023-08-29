@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import VideoCard from "./VideoCard";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const SearchBar = ({ URL }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [videos, setVideos] = useState([]);
-  const navigate = useNavigate(); // Get the navigate function from React Router
+
 
   useEffect(() => {
     const fetchInitialVids = async () => {
@@ -37,9 +37,11 @@ const SearchBar = ({ URL }) => {
     }
   };
 
-  const handleVideoClick = (videoId) => {
-    // Navigate to the video show component with the selected video's ID
-    navigate(`/video/${videoId}`);
+  const onVideoClick = (videoId) => {
+    const video = videos.find((video) => video.id.videoId === videoId);
+    if (video) {
+      alert(`Clicked on video: ${video.snippet.title}`);
+    }
   };
 
   return (
@@ -54,7 +56,7 @@ const SearchBar = ({ URL }) => {
       <div className="video-list">
         {videos.map((video) => (
           <Link to={`/show/${video.id.videoId}`}>
-            <VideoCard key={video.id.videoId} video={video} />
+            <VideoCard key={video.id.videoId} video={video} onVideoClick={onVideoClick} />
           </Link>
         ))}
       </div>
