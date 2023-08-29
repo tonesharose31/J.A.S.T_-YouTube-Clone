@@ -14,8 +14,9 @@ const SearchBar = ({URL}) => {
       const data = await response.json();
       console.log(data)
       setVideos(data.items);
+      console.log(data.items)
     } catch (error) {
-      console.error(`Error fetchig search results:`, error);
+        console.error(`Error fetchig search results:`, error);
     }
   };
 // console.log(videos)
