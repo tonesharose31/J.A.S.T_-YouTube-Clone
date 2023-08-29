@@ -22,6 +22,11 @@ const SearchBar = ({URL}) => {
     }
   };
 
+  const onVideoClick = (videoId) => {
+    const video = videos.find((video) => video.id.videoId === videoId)
+
+  }
+
   return (
     <form>
       <input
@@ -33,7 +38,7 @@ const SearchBar = ({URL}) => {
       <button onClick={handleSearch}>Search</button>
       <div className="video-list">
         {videos.map((video) => (
-          <VideoCard key={video.id.videoId} video={video} />
+          <VideoCard key={video.id.videoId} video={video} onVideoClick={onVideoClick} />
         ))}
       </div>
     </form>
