@@ -56,7 +56,7 @@ const SearchBar = ({ URL }) => {
       <button onClick={handleSearch}>Search</button>
       <div className="video-list">
         {videos.map((video) => (
-          <Link to={`/show/${video.id.videoId}`}>
+          <Link to={`/video/${video.id.videoId}`}>
             <VideoCard key={video.id.videoId} video={video} onVideoClick={onVideoClick} />
           </Link>
         ))}
