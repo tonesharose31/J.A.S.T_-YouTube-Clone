@@ -6,7 +6,9 @@ const SearchBar = ({URL}) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [videos, setVideos] = useState([]);
 
-  const handleSearch = async () => {
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    
     try {
       const response = await fetch(
         `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q=${searchQuery}&maxResults=8&key=${URL}`
@@ -18,7 +20,7 @@ const SearchBar = ({URL}) => {
       console.error(`Error fetchig search results:`, error);
     }
   };
-// console.log(videos)
+
   return (
     <form>
       <input

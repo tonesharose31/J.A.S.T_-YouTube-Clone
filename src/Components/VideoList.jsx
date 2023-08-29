@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const VideoList = () => {
+const VideoList = ({videos}) => {
     return (
         <div className='video-list'>
             {videos.map((video) => (
