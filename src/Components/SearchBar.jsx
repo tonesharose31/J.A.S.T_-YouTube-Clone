@@ -43,15 +43,20 @@ const SearchBar = ({ URL }) => {
   };
 
   return (
-    <form>
+    <form className="d-flex">
       <input
         type="text"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
         placeholder="Search"
         id="searchInput"
+        className="form-control me-2"
+
       />
-      <button onClick={handleSearch}>Search</button>
+       <button className="btn btn-primary" onClick={handleSearch}>
+        Search
+      </button>
+      
       <div className="video-list">
         {videos.map((video) => (
           <Link to={`/show/${video.id.videoId}`}>
