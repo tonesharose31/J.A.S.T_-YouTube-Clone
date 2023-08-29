@@ -1,31 +1,29 @@
 import React, { useState } from "react";
 import VideoCard from "./VideoCard";
 
-const SearchBar = ({URL}) => {
-
+const SearchBar = ({ URL }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [videos, setVideos] = useState([]);
 
   const handleSearch = async (e) => {
     e.preventDefault();
-    
+
     try {
       const response = await fetch(
         `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q=${searchQuery}&maxResults=8&key=${URL}`
       );
       const data = await response.json();
-      console.log(data)
+      console.log(data);
       setVideos(data.items);
-      console.log(data.items)
+      console.log(data.items);
     } catch (error) {
-        console.error(`Error fetchig search results:`, error);
+      console.error(`Error fetchig search results:`, error);
     }
   };
 
   const onVideoClick = (videoId) => {
-    const video = videos.find((video) => video.id.videoId === videoId)
-
-  }
+    const video = videos.find((video) => video.id.videoId === videoId);
+  };
 
   return (
     <form>
