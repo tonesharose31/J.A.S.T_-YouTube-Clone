@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import VideoCard from "./VideoCard";
 
-const SearchBar = ({ URL }) => {
+const SearchBar = ({URL}) => {
+
   const [searchQuery, setSearchQuery] = useState("");
   const [videos, setVideos] = useState([]);
 
@@ -11,14 +12,13 @@ const SearchBar = ({ URL }) => {
         `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q=${searchQuery}&maxResults=8&key=${URL}`
       );
       const data = await response.json();
-      console.log(data);
+      console.log(data)
       setVideos(data.items);
     } catch (error) {
       console.error(`Error fetchig search results:`, error);
     }
   };
-  // console.log(videos)
-  
+// console.log(videos)
   return (
     <form>
       <input
