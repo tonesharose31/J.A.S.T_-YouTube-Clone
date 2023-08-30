@@ -29,7 +29,7 @@ const AboutMe = () => {
               <img
                 src="src/assets/JASTshanice.jpeg"
                 alt={`Shanice Griffin`}
-                class="card-img-top"
+                className="card-img-top"
               />
               <div className="contributer-details-container">
                 <div className="card-body d-block">
