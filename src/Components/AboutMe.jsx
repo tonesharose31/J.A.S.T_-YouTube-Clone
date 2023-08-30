@@ -2,7 +2,6 @@ import React from "react";
 
 const AboutMe = () => {
   return (
-    <div className="col-sm-12 col-md-4">
       <div className="col">
         <ul className="contributor-list">
           <div className="card">
@@ -13,14 +12,14 @@ const AboutMe = () => {
                 class="card-img-top"
               />
               <div className="contributer-details-container">
-                <div class="card-body d-block">
+                <div className="card-body d-block">
                   <h5 className="card-title">{`Joseph Carter`}</h5>
                   <p className="card-text">Things about me.</p>
-                  <a href="https://www.linkedin.com/in/josephaecarter/">
+                  <a href="https://www.linkedin.com/in/josephaecarter/" className="card-link">
                     Linkedin
                   </a>
                   <br />
-                  <a href="https://github.com/Joseph-Carter">Github</a>
+                  <a href="https://github.com/Joseph-Carter" className="card-link">Github</a>
                 </div>
               </div>
             </li>
@@ -33,14 +32,14 @@ const AboutMe = () => {
                 class="card-img-top"
               />
               <div className="contributer-details-container">
-                <div class="card-body d-block">
+                <div className="card-body d-block">
                   <h5 className="card-title">{`Shanice Griffin`}</h5>
                   <p className="card-text">Things about me</p>
-                  <a href="https://www.linkedin.com/in/shanicegriffin/">
+                  <a href="https://www.linkedin.com/in/shanicegriffin/" className="card-link">
                     Linkedin
                   </a>
                   <br />
-                  <a href="https://github.com/shanicegrif">Github</a>
+                  <a href="https://github.com/shanicegrif" className="card-link">Github</a>
                 </div>
               </div>
             </li>
@@ -53,14 +52,14 @@ const AboutMe = () => {
                 class="card-img-top"
               />
               <div className="contributer-details-container">
-                <div class="card-body d-block">
+                <div className="card-body d-block">
                   <h5 className="card-title">{`Tonesha Rose`}</h5>
                   <p className="card-text">Things about me</p>
-                  <a href="https://www.linkedin.com/in/tonesha-rose-53321a273/">
+                  <a href="https://www.linkedin.com/in/tonesha-rose-53321a273/" className="card-link">
                     Linkedin
                   </a>
                   <br />
-                  <a href="https://github.com/tonesharose31">Github</a>
+                  <a href="https://github.com/tonesharose31" className="card-link">Github</a>
                 </div>
               </div>
             </li>
@@ -73,21 +72,20 @@ const AboutMe = () => {
                 class="card-img-top"
               />
               <div className="contributer-details-container">
-                <div class="card-body d-block">
+                <div className="card-body d-block">
                   <h5 className="card-title">{`Anile Choice`}</h5>
                   <p className="card-text">Things about me</p>
-                  <a href="https://www.linkedin.com/in/anile-choice/">
+                  <a href="https://www.linkedin.com/in/anile-choice/" className="card-link">
                     Linkedin
                   </a>
                   <br />
-                  <a href="https://github.com/anilechoice">Github</a>
+                  <a href="https://github.com/anilechoice" className="card-link">Github</a>
                 </div>
               </div>
             </li>
           </div>
         </ul>
       </div>
-    </div>
   );
 };
 
