@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<SearchBar URL={URL} />} />
           <Route path="/about" element={<AboutMe />} />
-          <Route path="/video/:videoId" element={<Show/>} />
+          <Route path="/video/:videoId" element={<Show URL={URL}/>} />
         </Routes>
       </Router>
       </div>
