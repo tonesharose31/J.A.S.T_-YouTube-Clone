@@ -5,8 +5,6 @@ const VideoCard = ({video, onVideoClick}) => {
     const {title, description, thumbnails, } = video.snippet
     const { videoId } = video.id
 
-    console.log(video)
-
     const handleVideoClick = () => {
         onVideoClick(videoId);
       };
