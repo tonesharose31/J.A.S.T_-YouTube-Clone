@@ -5,12 +5,14 @@ const VideoCard = ({video, onVideoClick}) => {
     const {title, description, thumbnails, } = video.snippet
     const { videoId } = video.id
 
+    console.log(video)
+
     const handleVideoClick = () => {
         onVideoClick(videoId);
       };
 
     return (
-        <div className='video-card' onClick={handleVideoClick}>
+        <div key={videoId} className='video-card' onClick={handleVideoClick}>
             <img src={thumbnails.medium.url} alt={title} />
             <h3>{title}</h3>
             <p>{description}</p>
