@@ -42,9 +42,13 @@ const SearchBar = ({ URL }) => {
     navigate(`/video/${videoId}`);
   };
 
+// const onSubmit = 
+
   return (
-    <form className="d-flex">
-      <input
+    <div> 
+    <form className="d-flex" style={{paddingTop:"30px"}}>
+
+      <input 
         type="text"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
@@ -56,7 +60,9 @@ const SearchBar = ({ URL }) => {
        <button className="btn btn-primary" onClick={handleSearch}>
         Search
       </button>
-      
+
+    </form>
+
       <div className="video-list">
         {videos.map((video) => (
           <Link to={`/show/${video.id.videoId}`}>
@@ -64,7 +70,8 @@ const SearchBar = ({ URL }) => {
           </Link>
         ))}
       </div>
-    </form>
+
+    </div>
   );
 };
 
