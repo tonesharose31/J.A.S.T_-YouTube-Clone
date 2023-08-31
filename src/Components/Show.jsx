@@ -8,24 +8,34 @@ const Show = () => {
   const [comments, setComments] = useState([]);
   const commentTotal = comments.length;
 
-  const currentDate = new Date();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+const currentDate = new Date();
   const currentDayOfMonth = currentDate.getDate();
   const currentMonth = currentDate.getMonth();
   const currentYear = currentDate.getFullYear();
-  const timestamp =
+  const currentHours = currentDate.getHours();
+  const currentMinutes = ( (currentDate.getMinutes()<10?'0':'') + currentDate.getMinutes() );
+  const amOrPm = currentHours >= 12 ? "PM" : "AM";
+  const formattedHours = currentHours % 12 || 12;
+
+  const timeStamp =
     currentMonth +
     1 +
     "-" +
     currentDayOfMonth +
     "-" +
-    currentYear;
+    currentYear +
+    " " +
+    formattedHours +
+    ":" +
+    currentMinutes +
+    " " +
+    amOrPm;
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-
-    const newComment = { name, comment };
-    setComments([...comments, newComment]);
+    const newComment = { name, comment, timeStamp };
+    setComments([newComment, ...comments]);
 
     setName("");
     setComment("");
@@ -66,7 +76,7 @@ const Show = () => {
         <ul>
           {comments.map((comment, index) => (
             <li key={index}>
-                <p>{timestamp}</p>
+                <p>{comment.timeStamp}</p>
               <strong>{comment.name}:</strong> {comment.comment}
             </li>
           ))}
