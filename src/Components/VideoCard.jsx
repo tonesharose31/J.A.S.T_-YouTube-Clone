@@ -2,7 +2,7 @@ import React from 'react';
 
 const VideoCard = ({video, onVideoClick}) => {
 
-    const {title, description, thumbnails, } = video.snippet
+    const {title, thumbnails } = video.snippet
     const { videoId } = video.id
 
     const handleVideoClick = () => {
@@ -13,7 +13,6 @@ const VideoCard = ({video, onVideoClick}) => {
         <div key={videoId} className='video-card' onClick={handleVideoClick}>
             <img src={thumbnails.medium.url} alt={title} />
             <h3>{title}</h3>
-            <p>{description}</p>
         </div>
     );
 }
