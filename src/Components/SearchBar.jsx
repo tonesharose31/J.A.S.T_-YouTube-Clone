@@ -39,17 +39,13 @@ const SearchBar = ({ URL }) => {
 
   const onVideoClick = (videoId) => {
     const video = videos.find((video) => video.id.videoId === videoId);
-    if (video) {
-      alert(`Clicked on video: ${video.snippet.title}`);
-    }
   };
 
 // const onSubmit = 
 
   return (
-    <div> 
-    <form className="d-flex" style={{paddingTop:"30px"}}>
-
+    <div className="search"> 
+    <form className="d-flex" style={{paddingTop:"60px"}}>
       <input 
         type="text"
         value={searchQuery}

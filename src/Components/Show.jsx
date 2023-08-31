@@ -66,7 +66,7 @@ const Show = ({ URL }) => {
   console.log(video);
 
   return (
-    <div className="container">
+    <div className="show-vid" style={{ paddingTop: "60px" }}>
       <div>
         <iframe
           width={"700"}
@@ -75,23 +75,25 @@ const Show = ({ URL }) => {
         ></iframe>
       </div>
       <h3>{video.title}</h3>
-      <div>
-        <p>Posted On: {video.publishedAt}</p>
-        <p>
-          Description:{" "}
-          {video.description
-            ? showAllDetails
-              ? video.description
-              : video.description.slice(0, 50) + "..."
-            : ""}
-        </p>
-        {video.description && video.description.length > 50 && (
-          <span onClick={toggleContent}>
-            {showAllDetails ? "Show Less..." : "Show More..."}
-          </span>
-        )}
+      <div className="vid-details">
+        <div class="border border-dark rounded" style={{ width: "700px", padding: "5px" }}>
+          <p>Posted On: {video.publishedAt}</p>
+          <p>
+            Description:{" "}
+            {video.description
+              ? showAllDetails
+                ? video.description
+                : video.description.slice(0, 50) + "..."
+              : ""}
+          </p>
+          {video.description && video.description.length > 50 && (
+            <span onClick={toggleContent}>
+              {showAllDetails ? "Show Less..." : "Show More..."}
+            </span>
+          )}
+        </div>
       </div>
-      <div className="comments">
+      <div className="comments" style={{ paddingTop: "40px" }}>
         <h4>{commentTotal} Comments</h4>
         <form onSubmit={handleSubmit}>
           <label htmlFor="name">Name:</label>
@@ -103,7 +105,9 @@ const Show = ({ URL }) => {
             onChange={(e) => setName(e.target.value)}
           />
           <br />
-          <label htmlFor="comment">Comment:</label>
+          <label htmlFor="comment" style={{ paddingTop: "10px" }}>
+            Comment:
+          </label>
           <input
             required
             type="text"
@@ -114,6 +118,7 @@ const Show = ({ URL }) => {
           <br />
           <input className="submit-button" type="submit" />
         </form>
+        <hr />
         <ul>
           {comments.map((comment, index) => (
             <li key={index}>
