@@ -76,7 +76,7 @@ const Show = ({ URL }) => {
       </div>
       <h3>{video.title}</h3>
       <div className="vid-details">
-        <div class="border border-dark rounded" style={{ width: "700px", padding: "5px" }}>
+        <div class="border border-dark rounded" style={{ width: "700px", padding: "5px", backgroundColor: "lightgray" }}>
           <p>Posted On: {video.publishedAt}</p>
           <p>
             Description:{" "}
@@ -93,7 +93,8 @@ const Show = ({ URL }) => {
           )}
         </div>
       </div>
-      <div className="comments" style={{ paddingTop: "40px" }}>
+      <hr />
+      <div className="comments" style={{ paddingTop: "10px" }}>
         <h4>{commentTotal} Comments</h4>
         <form onSubmit={handleSubmit}>
           <label htmlFor="name">Name:</label>
@@ -116,15 +117,15 @@ const Show = ({ URL }) => {
             onChange={(e) => setComment(e.target.value)}
           />
           <br />
-          <input className="submit-button" type="submit" />
+          <input className="btn btn-primary" type="submit" style={{ marginTop: "10px" }}/>
         </form>
         <hr />
         <ul>
           {comments.map((comment, index) => (
             <li key={index}>
-              {comment.timeStamp}
-              <br />
-              <strong>{comment.name}:</strong> {comment.comment}
+             <strong>{comment.name}</strong> <em class="text-secondary" style={{ fontSize: "12px", marginLeft:"15px" }}>{comment.timeStamp}</em>
+             <br />
+              {comment.comment}
             </li>
           ))}
         </ul>
