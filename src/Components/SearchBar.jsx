@@ -45,7 +45,7 @@ const SearchBar = ({ URL }) => {
 
   return (
     <div className="search"> 
-    <form className="d-flex" style={{paddingTop:"60px"}}>
+    <form className="d-flex" style={{paddingTop:"60px", paddingBottom:"30px"}}>
       <input 
         type="text"
         value={searchQuery}
