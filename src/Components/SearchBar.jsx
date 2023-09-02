@@ -6,7 +6,6 @@ const SearchBar = ({ URL }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [videos, setVideos] = useState([]);
 
-
   useEffect(() => {
     const fetchInitialVids = async () => {
       try {
@@ -26,6 +25,11 @@ const SearchBar = ({ URL }) => {
   const handleSearch = async (e) => {
     e.preventDefault();
 
+    if (searchQuery.trim() === "") {
+      alert("Please enter something in the search bar before searching");
+      return;
+    }
+
     try {
       const response = await fetch(
         `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q=${searchQuery}&maxResults=8&key=${URL}`
@@ -40,8 +44,6 @@ const SearchBar = ({ URL }) => {
   const onVideoClick = (videoId) => {
     const video = videos.find((video) => video.id.videoId === videoId);
   };
-
-// const onSubmit = 
 
   return (
     <div className="search"> 
@@ -58,17 +60,19 @@ const SearchBar = ({ URL }) => {
        <button className="btn btn-primary" onClick={handleSearch}>
         Search
       </button>
-
-    </form>
+      </form>
 
       <div className="video-list">
         {videos.map((video) => (
-          <Link to={`/video/${video.id.videoId}`}>
-            <VideoCard key={video.id.videoId} video={video} onVideoClick={onVideoClick} />
+          <Link to={`/video/${video.id.videoId}`} key={video.id.videoId}>
+            <VideoCard
+              key={video.id.videoId}
+              video={video}
+              onVideoClick={onVideoClick}
+            />
           </Link>
         ))}
       </div>
-
     </div>
   );
 };
