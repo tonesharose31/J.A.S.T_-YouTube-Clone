@@ -43,24 +43,21 @@ const SearchBar = ({ URL }) => {
 
   const onVideoClick = (videoId) => {
     const video = videos.find((video) => video.id.videoId === videoId);
-    if (video) {
-      alert(`Clicked on video: ${video.snippet.title}`);
-    }
   };
 
   return (
-    <div>
-      <form className="d-flex" style={{ paddingTop: "30px" }}>
-        <input
-          type="text"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="Search"
-          id="searchInput"
-          className="form-control me-2"
-          required
-        />
-        <button type="search" className="btn btn-primary" onClick={handleSearch}>
+    <div className="search"> 
+    <form className="d-flex" style={{paddingTop:"60px"}}>
+      <input 
+        type="text"
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        placeholder="Search"
+        id="searchInput"
+        className="form-control me-2"
+
+      />
+       <button className="btn btn-primary" onClick={handleSearch}>
         Search
       </button>
       </form>
