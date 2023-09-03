@@ -49,3 +49,7 @@ nav {
 ul {
   list-style: none;
 }
+
+img {
+  object-fit: contain;
+}
