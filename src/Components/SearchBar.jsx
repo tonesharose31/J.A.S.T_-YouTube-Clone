@@ -62,7 +62,7 @@ const SearchBar = ({ URL }) => {
       </button>
       </form>
 
-      <div className="video-list">
+      <div className="video-list row row-cols-1 row-cols-md-2 g-4">
         {videos.map((video) => (
           <Link to={`/video/${video.id.videoId}`} key={video.id.videoId}>
             <VideoCard
