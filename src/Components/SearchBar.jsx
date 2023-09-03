@@ -22,6 +22,7 @@ const SearchBar = ({ URL }) => {
     fetchVideos();
 
   }, [searchQuery, URL]);
+    
   const inputSearch = (e) => {
     e.preventDefault();
    fetchVideos();
@@ -34,9 +35,8 @@ const SearchBar = ({ URL }) => {
     }
   };
 
-
   return (
-    <div> 
+    <div className="container mt-4"> 
 
     <form className="d-flex" style={{paddingTop:"30px"}}
      onSubmit={inputSearch} >
@@ -49,7 +49,7 @@ const SearchBar = ({ URL }) => {
         className="form-control me-2"
 
       />
-       <button  type="submit" className="btn btn-primary">
+       <button  type="submit" className="btn btn-danger">
         Search
       </button>
     </form>
