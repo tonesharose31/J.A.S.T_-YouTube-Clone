@@ -24,7 +24,16 @@ const SearchBar = ({ URL }) => {
   }, [searchQuery, URL]);
   const inputSearch = (e) => {
     e.preventDefault();
-   fetchVideos();
+
+    try {
+      const response = await fetch(
+        `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q=${searchQuery}&maxResults=8&key=${URL}`
+      );
+      const data = await response.json();
+      setVideos(data.items);
+    } catch (error) {
+      console.error(`Error fetching search results:`, error);
+    }
   };
 
   const onVideoClick = (videoId) => {
@@ -34,12 +43,11 @@ const SearchBar = ({ URL }) => {
     }
   };
 
+// const onSubmit = 
 
   return (
-    <div> 
-
-    <form className="d-flex" style={{paddingTop:"30px"}}
-     onSubmit={inputSearch} >
+    <div className="search"> 
+    <form className="d-flex" style={{paddingTop:"60px"}}>
       <input 
         type="text"
         value={searchQuery}
@@ -52,12 +60,13 @@ const SearchBar = ({ URL }) => {
        <button  type="submit" className="btn btn-primary">
         Search
       </button>
+
     </form>
 
-      <div className="video-list">
+      <div className="video-list row row-cols-1 row-cols-md-2 g-4">
         {videos.map((video) => (
-          <Link to={`/video/${video.id.videoId}`}key={video.id.videoId}>
-            <VideoCard video={video} onVideoClick={onVideoClick} />
+          <Link to={`/video/${video.id.videoId}`}>
+            <VideoCard key={video.id.videoId} video={video} onVideoClick={onVideoClick} />
           </Link>
         ))}
       </div>
