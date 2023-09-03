@@ -5,15 +5,6 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <nav className= "navbar navbar-expand-lg navbar-light bg-light fixed-top border-bottom">
-    <Link to="/" className="navbar-brand">
-        <img 
-        className="youtube-logo" 
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCa4EDbkI8ATSXs7s-ovSP2cX_Qfw06aSRWA&usqp=CAU"
-        alt="youtube-logo" 
-        width="120"
-          height="30"
-          />
-          </Link>
           <button
         className="navbar-toggler"
         type="button"
@@ -25,6 +16,16 @@ const NavBar = () => {
       >
           <span className="navbar-toggler-icon"></span>
         </button>
+        
+    <Link to="/" className="navbar-brand">
+        <img 
+        className="youtube-logo" 
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCa4EDbkI8ATSXs7s-ovSP2cX_Qfw06aSRWA&usqp=CAU"
+        alt="youtube-logo" 
+        width="120"
+          height="30"
+          />
+          </Link>
      
         <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav ml-auto">
