@@ -26,7 +26,7 @@ const SearchBar = ({ URL }) => {
     e.preventDefault();
 
     if (searchQuery.trim() === "") {
-      alert("Please enter something in the search bar before searching");
+      alert("Please enter something in the search bar!");
       return;
     }
 
