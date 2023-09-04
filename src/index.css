@@ -61,7 +61,7 @@ img {
   margin-top: 20px;
 }
 
-@media (max-width: 776px) {
+@media (max-width: 796px) {
   .video-list {
     grid-template-columns: 1fr;
   }
