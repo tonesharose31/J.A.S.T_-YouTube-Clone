@@ -11,11 +11,7 @@ const NavBar = () => {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top border-bottom">
-      <button
-        className="navbar-toggler"
-        type="button"
-        onClick={toggleSidebar}
-      >
+      <button className="navbar-toggler" type="button" onClick={toggleSidebar}>
         <span className="navbar-toggler-icon"></span>
       </button>
 
@@ -29,7 +25,10 @@ const NavBar = () => {
         />
       </Link>
 
-      <div className={`collapse navbar-collapse ${sidebarOpen ? "show" : ""}`} id="navbarNav">
+      <div
+        className={`collapse navbar-collapse ${sidebarOpen ? "show" : ""}`}
+        id="navbarNav"
+      >
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
             <Link to="/" className="nav-link">
