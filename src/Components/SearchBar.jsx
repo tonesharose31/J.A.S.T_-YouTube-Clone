@@ -33,13 +33,10 @@ const SearchBar = ({ URL }) => {
 
   const onVideoClick = (videoId) => {
     const video = videos.find((video) => video.id.videoId === videoId);
-    if (video) {
-      alert(`Clicked on video: ${video.snippet.title}`);
-    }
   };
 
   return (
-    <div className="container mt-4">
+    <div className="mt-4">
       <form
         className="d-flex"
         style={{ paddingTop: "30px" }}
