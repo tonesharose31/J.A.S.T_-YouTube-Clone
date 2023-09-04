@@ -60,7 +60,7 @@ const SearchBar = ({ URL }) => {
 
       {isEmptySearch && (
         <div className="alert alert-danger mt-3">
-          Search is empty! Please enter something.
+          Please enter something in the search area.
         </div>
       )}
 
