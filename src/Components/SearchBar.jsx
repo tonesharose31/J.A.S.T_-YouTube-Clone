@@ -60,12 +60,12 @@ const SearchBar = ({ URL }) => {
 
       {isEmptySearch && (
         <div className="alert alert-danger mt-3">
-          Please enter a search query.
+          Search is empty! Please enter something.
         </div>
       )}
 
       {videos && videos.length > 0 && (
-        <div className="video-list row-cols-1 row-cols-md-2 g-4">
+        <div className="video-list">
           {videos.map((video) => (
             <Link to={`/video/${video.id.videoId}`} key={video.id.videoId}>
               <VideoCard video={video} onVideoClick={onVideoClick} />
