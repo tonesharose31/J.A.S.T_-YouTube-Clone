@@ -12,23 +12,14 @@ function App() {
     <Router>
       <NavBar />
       <div className="container">
-        <div className="row">
-          <div className="col-md-8">
-            <Routes>
-              <Route path="/" element={<SearchBar URL={URL} />} />
-              <Route path="/about" element={<AboutMe />} />
-              <Route path="/video/:videoId" element={<Show URL={URL} />} />
-            </Routes>
-          </div>
-        </div>
+        <Routes>
+          <Route path="/" element={<SearchBar URL={URL} />} />
+          <Route path="/about" element={<AboutMe />} />
+          <Route path="/video/:videoId" element={<Show URL={URL} />} />
+        </Routes>
       </div>
     </Router>
   );
 }
 
 export default App;
-
-
-
-
-

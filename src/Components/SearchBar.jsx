@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import VideoCard from "./VideoCard";
- import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const SearchBar = ({ URL }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [videos, setVideos] = useState([]);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-
+  const [searched, setSearched] = useState(false);
 
   useEffect(() => {
     const fetchVideos = async () => {
@@ -21,84 +20,48 @@ const SearchBar = ({ URL }) => {
       }
     };
 
-    fetchVideos();
+    if (searched || searchQuery === "") {
+      fetchVideos();
+    }
+  }, [searched, searchQuery, URL]);
 
-  }, [searchQuery, URL]);
-    
   const inputSearch = (e) => {
     e.preventDefault();
-   fetchVideos();
+    setSearched(true);
   };
-
 
   const onVideoClick = (videoId) => {
     const video = videos.find((video) => video.id.videoId === videoId);
-    if (video) {
-      alert(`Clicked on video: ${video.snippet.title}`);
-    }
-  };
-
-
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
   };
 
   return (
-    <div className="container mt-4"> 
- <div className="row">
-        <div className={`col-md-8 ${sidebarOpen ? "offset-md-4" : ""}`}>
-          <button
-            className="navbar-toggler d-md-none"
-            type="button"
-            onClick={toggleSidebar}
->
-<span className="navbar-toggler-icon"></span>
-</button>
+    <div className="container mt-4">
+      <form
+        className="d-flex"
+        style={{ paddingTop: "30px" }}
+        onSubmit={inputSearch}
+      >
+        <input
+          type="text"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          placeholder="Search..."
+          id="searchInput"
+          className="form-control"
+        />
+        <button type="submit" className="btn btn-danger">
+          Search
+        </button>
+      </form>
 
-
-    <form className="d-flex" style={{paddingTop:"30px"}}
-     onSubmit={inputSearch} >
-      <input 
-        type="text"
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        placeholder="Search"
-        id="searchInput"
-        className="form-control me-2"
-
-      />
-       <button  type="submit" className="btn btn-danger">
-        Search
-      </button>
-    </form>
-
-      <div className="video-list">
+      <div className="video-list row-cols-1 row-cols-md-2 g-4">
         {videos.map((video) => (
-          <Link to={`/video/${video.id.videoId}`}key={video.id.videoId}>
+          <Link to={`/video/${video.id.videoId}`} key={video.id.videoId}>
             <VideoCard video={video} onVideoClick={onVideoClick} />
           </Link>
         ))}
       </div>
-      </div>
-      </div>
-
-      <div
-       className={`col-md-4 ${
-         sidebarOpen ? "show" : "collapse"
-       }`}
-     >
-      {/* sidebar content */}
-      <h3>Sidebar Menu</h3>
-      <ul className="list-unstyled">
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link> 
-        </li>
-      </ul>
     </div>
-</div>
   );
 };
 
