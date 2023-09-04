@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const SearchBar = ({ URL }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [videos, setVideos] = useState([]);
-  const [searched, setSearched] = useState(false);
+  const [isEmptySearch, setIsEmptySearch] = useState(false);
 
   useEffect(() => {
     const fetchVideos = async () => {
@@ -15,23 +15,27 @@ const SearchBar = ({ URL }) => {
         );
         const data = await response.json();
         setVideos(data.items);
+        setIsEmptySearch(false);
       } catch (error) {
         console.error(`Error fetching search results:`, error);
       }
     };
 
-    if (searched || searchQuery === "") {
-      fetchVideos();
-    }
-  }, [searched, searchQuery, URL]);
+    fetchVideos();
+  }, [searchQuery, URL]);
 
   const inputSearch = (e) => {
     e.preventDefault();
-    setSearched(true);
+    if (searchQuery.trim() === "") {
+      setIsEmptySearch(true);
+    }
   };
 
   const onVideoClick = (videoId) => {
     const video = videos.find((video) => video.id.videoId === videoId);
+    if (video) {
+      alert(`Clicked on video: ${video.snippet.title}`);
+    }
   };
 
   return (
@@ -45,7 +49,7 @@ const SearchBar = ({ URL }) => {
           type="text"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="Search..."
+          placeholder="Search"
           id="searchInput"
           className="form-control"
         />
@@ -54,13 +58,21 @@ const SearchBar = ({ URL }) => {
         </button>
       </form>
 
-      <div className="video-list row-cols-1 row-cols-md-2 g-4">
-        {videos.map((video) => (
-          <Link to={`/video/${video.id.videoId}`} key={video.id.videoId}>
-            <VideoCard video={video} onVideoClick={onVideoClick} />
-          </Link>
-        ))}
-      </div>
+      {isEmptySearch && (
+        <div className="alert alert-danger mt-3">
+          Please enter a search query.
+        </div>
+      )}
+
+      {videos && videos.length > 0 && (
+        <div className="video-list row-cols-1 row-cols-md-2 g-4">
+          {videos.map((video) => (
+            <Link to={`/video/${video.id.videoId}`} key={video.id.videoId}>
+              <VideoCard video={video} onVideoClick={onVideoClick} />
+            </Link>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
