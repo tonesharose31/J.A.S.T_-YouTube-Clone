@@ -5,6 +5,8 @@ import VideoCard from "./VideoCard";
 const SearchBar = ({ URL }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [videos, setVideos] = useState([]);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
 
   useEffect(() => {
     const fetchVideos = async () => {
@@ -28,6 +30,7 @@ const SearchBar = ({ URL }) => {
    fetchVideos();
   };
 
+
   const onVideoClick = (videoId) => {
     const video = videos.find((video) => video.id.videoId === videoId);
     if (video) {
@@ -35,8 +38,23 @@ const SearchBar = ({ URL }) => {
     }
   };
 
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
   return (
     <div className="container mt-4"> 
+ <div className="row">
+        <div className={`col-md-8 ${sidebarOpen ? "offset-md-4" : ""}`}>
+          <button
+            className="navbar-toggler d-md-none"
+            type="button"
+            onClick={toggleSidebar}
+>
+<span className="navbar-toggler-icon"></span>
+</button>
+
 
     <form className="d-flex" style={{paddingTop:"30px"}}
      onSubmit={inputSearch} >
@@ -61,7 +79,26 @@ const SearchBar = ({ URL }) => {
           </Link>
         ))}
       </div>
+      </div>
+      </div>
+
+      <div
+       className={`col-md-4 ${
+         sidebarOpen ? "show" : "collapse"
+       }`}
+     >
+      {/* sidebar content */}
+      <h3>Sidebar Menu</h3>
+      <ul className="list-unstyled">
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link> 
+        </li>
+      </ul>
     </div>
+</div>
   );
 };
 
