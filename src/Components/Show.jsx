@@ -63,7 +63,6 @@ const Show = ({ URL }) => {
     setName("");
     setComment("");
   };
-  console.log(video);
 
   return (
     <div className="show-vid" style={{ paddingTop: "60px" }}>
