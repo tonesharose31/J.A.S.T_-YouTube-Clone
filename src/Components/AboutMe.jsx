@@ -1,6 +1,7 @@
 import React from "react";
 
 const AboutMe = () => {
+
   return (
     <div>
       <div className="row" style={{ paddingTop: "50px", listStyle: "none" }}>
@@ -68,7 +69,7 @@ const AboutMe = () => {
               <img
                 src="src/assets/JASTtonesha.jpeg"
                 alt={`Tonesha Rose`}
-                class="card-img-top"
+                className="card-img-top"
               />
               <div className="contributer-details-container">
                 <div className="card-body d-block">
