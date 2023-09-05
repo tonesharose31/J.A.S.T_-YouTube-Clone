@@ -9,18 +9,16 @@ function App() {
   const URL = import.meta.env.VITE_API_KEY;
 
   return (
-    <div className="container">
-      <div className="row d-md-block d-none">
-      <Router>
-        <NavBar />
+    <Router>
+      <NavBar />
+      <div className="container">
         <Routes>
           <Route path="/" element={<SearchBar URL={URL} />} />
           <Route path="/about" element={<AboutMe />} />
-          <Route path="/video/:videoId" element={<Show URL={URL}/>} />
+          <Route path="/video/:videoId" element={<Show URL={URL} />} />
         </Routes>
-      </Router>
       </div>
-    </div>
+    </Router>
   );
 }
 

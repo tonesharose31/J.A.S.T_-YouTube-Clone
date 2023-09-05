@@ -49,3 +49,20 @@ nav {
 ul {
   list-style: none;
 }
+
+img {
+  object-fit: contain;
+}
+
+.video-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 20px;
+}
+
+@media (max-width: 796px) {
+  .video-list {
+    grid-template-columns: 1fr;
+  }
+}
