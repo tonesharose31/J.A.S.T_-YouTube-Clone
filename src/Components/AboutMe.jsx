@@ -9,7 +9,7 @@ const AboutMe = () => {
           <div className="card mx-4 my-4" style={{ width: "18rem" }}>
             <li className="contributers">
               <img
-                src="src/assets/JASTjoseph.png"
+                src="../../public/JASTjoseph.png"
                 alt={`Joseph Carter`}
                 className="card-img-top"
               />
@@ -37,7 +37,7 @@ const AboutMe = () => {
           <div className="card mx-4 my-4" style={{ width: "18rem" }}>
             <li className="contributers">
               <img
-                src="src/assets/JASTshanice.jpeg"
+                src="../../public/JASTshanice.jpeg"
                 alt={`Shanice Griffin`}
                 className="card-img-top"
               />
@@ -67,7 +67,7 @@ const AboutMe = () => {
           <div className="card mx-4 my-4" style={{ width: "18rem" }}>
             <li className="contributers">
               <img
-                src="src/assets/JASTtonesha.jpeg"
+                src="../../public/JASTtonesha.jpeg"
                 alt={`Tonesha Rose`}
                 className="card-img-top"
               />
@@ -95,7 +95,7 @@ const AboutMe = () => {
           <div className="card mx-4 my-4" style={{ width: "18rem" }}>
             <li className="contributers">
               <img
-                src="src/assets/JASTanile.jpeg"
+                src="../../public/JASTanile.jpeg"
                 alt={`Anile Choice`}
                 class="card-img-top"
               />
