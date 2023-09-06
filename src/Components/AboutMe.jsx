@@ -16,7 +16,7 @@ const AboutMe = () => {
               <div className="contributer-details-container">
                 <div className="card-body d-block">
                   <h5 className="card-title">{`Joseph Carter`}</h5>
-                  <p className="card-text">Things about me.</p>
+                  <p className="card-text">Software Engineer.</p>
                   <a
                     href="https://www.linkedin.com/in/josephaecarter/"
                     className="card-link"
@@ -44,7 +44,7 @@ const AboutMe = () => {
               <div className="contributer-details-container">
                 <div className="card-body d-block">
                   <h5 className="card-title">{`Shanice Griffin`}</h5>
-                  <p className="card-text">Things about me</p>
+                  <p className="card-text">Software Engineer</p>
                   <a
                     href="https://www.linkedin.com/in/shanicegriffin/"
                     className="card-link"
@@ -102,7 +102,7 @@ const AboutMe = () => {
               <div className="contributer-details-container">
                 <div className="card-body d-block">
                   <h5 className="card-title">{`Anile Choice`}</h5>
-                  <p className="card-text">Things about me</p>
+                  <p className="card-text">Software Engineer</p>
                   <a
                     href="https://www.linkedin.com/in/anile-choice/"
                     className="card-link"
