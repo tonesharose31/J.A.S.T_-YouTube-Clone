@@ -73,7 +73,7 @@ const AboutMe = () => {
               <div className="contributer-details-container">
                 <div className="card-body d-block">
                   <h5 className="card-title">{`Tonesha Rose`}</h5>
-                  <p className="card-text">Things about me</p>
+                  <p className="card-text">Software Engineer</p>
                   <a
                     href="https://www.linkedin.com/in/tonesha-rose-53321a273/"
                     className="card-link"
