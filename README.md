@@ -2,7 +2,9 @@
 
 ## Overview
 
-This project is a YouTube clone that allows users to search for and view YouTube videos. It provides a user-friendly interface for searching, viewing, and commenting on videos. This README.md will provide an overview of what the project does, how it works, and a list of contributors who have contributed to its development.
+This project is a YouTube clone that allows users to search for and view YouTube videos. It provides a user-friendly interface for searching, viewing, and commenting on videos. This README.md will provide an overview of what the project does, how it works, and a list of contributors who have contributed to its development. 
+
+[J.A.S.T Youtube Clone Website](https://cheery-sundae-c2568f.netlify.app/)
 
 ## How It Works
 
